@@ -81,14 +81,12 @@ backend kubernetes-backend
 ##### Restart haproxy service
 ```
 systemctl restart haproxy
-
 ```
 ##### Check haproxy service
 
 Make sure the status of haproxy is active 
 ```
 systemctl status haproxy
-
 ```
 
 ## Configuring all kubernetes nodes (kubernetes-master1,kubernetes-master2,kubernetes-master3,kubernetes-worker1,kubernetes-worker2)
@@ -149,13 +147,11 @@ kubeadm join 172.31.6.214:6443 --token *********** \
     --discovery-token-ca-cert-hash ************************* \
     --control-plane --certificate-key *********************** \
     ----apiserver-advertise-address 172.31.21.101  # Added the ip address of node to be join as master
-
 ```
 
 ##### Deploy Calico network
 ```
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectcalico.org/v3.15/manifests/calico.yaml
-
 ```
 
 ## Downloading kube config to  local machine
